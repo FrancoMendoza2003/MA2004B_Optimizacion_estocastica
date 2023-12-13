@@ -1,0 +1,19 @@
+import os
+import requests
+export GOOEY_API_KEY=sk-xQi6FumSYMwFkATfdG1LsikND24fWhqwB17mV3Bu5BSAGSPb
+
+payload = {
+    "text_prompt": "An analogue film still of an astronaut in a space suit walking on the busy streets of Mumbai, golden light on the astronaut, 4k"
+}
+
+response = requests.post(
+    "https://api.gooey.ai/v2/CompareText2Img/",
+    headers={
+        "Authorization": "Bearer " + os.environ["GOOEY_API_KEY"],
+    },
+    json=payload,
+)
+assert response.ok, response.content
+
+result = response.json()
+print(response.status_code, result)
