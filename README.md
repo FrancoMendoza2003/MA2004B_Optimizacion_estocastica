@@ -1,2 +1,2 @@
-# MA2004B
+# MA2004B_Optimizacion_Estocastica
 Optimización Estocástica
